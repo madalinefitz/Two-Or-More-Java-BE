@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: local
   jpa:
     hibernate:
       ddl-auto: none
@@ -6,9 +8,6 @@ spring:
     url: ${DB_URL}
     user: ${DB_USER}
     password: ${DB_PW}
-    locations: classpath:db/migration
-    baseline-on-migrate: true
-    validate-on-migrate: false
   datasource:
     url: ${DB_URL}
     username: ${DB_USER}
