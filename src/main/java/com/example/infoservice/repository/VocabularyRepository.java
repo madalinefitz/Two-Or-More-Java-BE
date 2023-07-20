@@ -9,3 +9,4 @@ public interface VocabularyRepository extends JpaRepository<Vocabulary, Integer>
     // You can define custom query methods or use the default methods provided by JpaRepository
 }
 
+//this is our ORM, correct??
