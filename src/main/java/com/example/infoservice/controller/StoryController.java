@@ -7,6 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/stories")
 public class StoryController {
 
+    private final StoryService storyService;
+
+    @Autowired
+    public StoryController(StoryService service) {
+        this.storyService = service;
+    }
+
+    @GetMapping("/stories")
+    public List<String> getStories() {
+        return storyService.GetStory();
+    }
 
 
 }

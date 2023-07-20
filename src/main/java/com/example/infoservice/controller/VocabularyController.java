@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/vocabularies")
+@RequestMapping("/library/vocabulary")
 public class VocabularyController {
 
     private final VocabularyService vocabularyService;
@@ -19,8 +19,8 @@ public class VocabularyController {
         this.vocabularyService = service;
     }
 
-    @GetMapping("/users")
-    public List<String> getUsers() {
+    @GetMapping("/library/vocabulary")
+    public List<String> getVocabulary() {
        return vocabularyService.GetVocabulary();
     }
 }
