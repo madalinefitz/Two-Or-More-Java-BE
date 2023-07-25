@@ -1,6 +1,12 @@
 package com.example.infoservice.service;
 
+import com.example.infoservice.entity.Story;
+import com.example.infoservice.repository.StoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class StoryService {
@@ -9,7 +15,7 @@ public class StoryService {
 
     @Autowired
     public StoryService(StoryRepository storyRepository) {
-        this.stroyRepository = storyRepository;
+        this.storyRepository = storyRepository;
     }
 
     public List<String> GetStory() {

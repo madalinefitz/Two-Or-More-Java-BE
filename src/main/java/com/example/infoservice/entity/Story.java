@@ -21,10 +21,10 @@ public class Story {
     private String story;
 
     @Column(nullable = false, length = 100)
-    private String first_name;
+    private String firstName;
 
     @Column(nullable = false, length = 1)
-    private String last_initial;
+    private String lastInitial;
 
     @Column(name = "created_date")
     private LocalDateTime createdDate;
@@ -36,11 +36,12 @@ public class Story {
         // Default constructor
     }
 
-    public Story(String story, String first_name, String last_initial) {
+    public Story(String story, String firstName, String lastInitial) {
         this.story = story;
-        this.first_name = first_name;
-        this.last_initial = last_initial;
+        this.firstName = firstName;
+        this.lastInitial = lastInitial;
     }
+
 }
 
 
