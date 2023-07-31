@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/library/vocabulary")
+//@RequestMapping("/library/vocabulary")
 public class VocabularyController {
 
     private final VocabularyService vocabularyService;

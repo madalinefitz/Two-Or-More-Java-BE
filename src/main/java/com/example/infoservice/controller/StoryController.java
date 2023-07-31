@@ -26,7 +26,6 @@ public class StoryController {
     @GetMapping("/test")
     public String getHello() {
         return "hello";
-
         //test route working
     }
 

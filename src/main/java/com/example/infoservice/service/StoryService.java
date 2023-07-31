@@ -22,9 +22,10 @@ public class StoryService {
         Story story= new Story();
         story.setStory("stories");
         story.setFirstName("Cindy");
-        story.setLastInitial("L.");
-        Story story2 = new Story("stories", "Cindy", "L.");
+        story.setLastInitial("L");
+        Story story2 = new Story("stories", "Cindy", "L");
         storyRepository.saveAndFlush(story);
+        storyRepository.saveAndFlush(story2);
         return new ArrayList<>();
     }
 }
