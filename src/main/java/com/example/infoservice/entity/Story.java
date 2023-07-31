@@ -30,7 +30,6 @@ public class Story {
     private LocalDateTime createdDate;
 
     // Constructors
-    // No need to write explicit getters, setters, equals(), hashCode(), and toString() methods
 
     public Story() {
         // Default constructor
@@ -41,6 +40,9 @@ public class Story {
         this.firstName = firstName;
         this.lastInitial = lastInitial;
     }
+
+
+
 
 }
 

@@ -25,5 +25,5 @@ public class VocabularyController {
     }
 }
 
-//controllers should only be your access point
-//controllers also responsible for security
+// controllers should only be your access point
+// controllers also responsible for security

@@ -28,4 +28,9 @@ public class StoryService {
         storyRepository.saveAndFlush(story2);
         return new ArrayList<>();
     }
+
+    public Story createNewStory(String storyText, String firstName,String lastInitial) {
+        Story newStory = new Story(storyText, firstName, lastInitial);
+        return storyRepository.save(newStory);
+    }
 }
