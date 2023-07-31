@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/stories")
 public class StoryController {
 
     private final StoryService storyService;
@@ -22,6 +21,13 @@ public class StoryController {
     @GetMapping("/stories")
     public List<String> getStories() {
         return storyService.GetStory();
+    }
+
+    @GetMapping("/test")
+    public String getHello() {
+        return "hello";
+
+        //test route working
     }
 
 
