@@ -41,6 +41,15 @@ public class Story {
         this.lastInitial = lastInitial;
     }
 
+    public String getStory() { return story; }
+
+    public void setStory(String story) { this.story = story; }
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public String getLastInitial() {return lastInitial; }
+    public void setLastInitial(String lastInitial) { this.lastInitial = lastInitial; }
+
 
 
 

@@ -5,6 +5,7 @@ import com.example.infoservice.service.StoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
@@ -19,8 +20,12 @@ public class StoryController {
     }
 
     @GetMapping("/stories")
-    public List<String> getStories() {
-        return storyService.GetStory();
+    public ResponseEntity<List<Story>> getAllStories() {
+        // Call the StoryService to fetch all stories from the database
+        List<Story> allStories = storyService.getAllStories();
+
+        // Return the list of stories in the response with a 200 OK status
+        return ResponseEntity.status(HttpStatus.OK).body(allStories);
     }
 
     @GetMapping("/test")
@@ -30,19 +35,12 @@ public class StoryController {
     }
 
     @PostMapping("/stories")
-    public ResponseEntity<Story> createStory(@RequestBody StoryRequest request){
-        // Extract information from the request
-        String storyText = request.getStory();
-        String firstName = request.getFirstName();
-        String lastInitial = request.getLastInitial();
-
+    public ResponseEntity<Story> createStory(@RequestBody Story story) {
         // Call the createNewStory method of the StoryService
-        Story newStory = storyService.createNewStory(storyText, firstName, lastInitial);
+        Story newStory = storyService.createNewStory(story.getStory(), story.getFirstName(), story.getLastInitial());
 
         // Return the newly created story in the response with a 201 Created status
         return ResponseEntity.status(HttpStatus.CREATED).body(newStory);
     }
-
-
 }
 

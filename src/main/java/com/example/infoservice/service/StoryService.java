@@ -33,4 +33,9 @@ public class StoryService {
         Story newStory = new Story(storyText, firstName, lastInitial);
         return storyRepository.save(newStory);
     }
+
+    public List<Story> getAllStories() {
+        // Use the findAll method of the StoryRepository to fetch all stories from the database
+        return storyRepository.findAll();
+    }
 }
