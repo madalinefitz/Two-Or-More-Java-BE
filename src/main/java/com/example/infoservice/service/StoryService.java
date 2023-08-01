@@ -22,9 +22,20 @@ public class StoryService {
         Story story= new Story();
         story.setStory("stories");
         story.setFirstName("Cindy");
-        story.setLastInitial("L.");
-        Story story2 = new Story("stories", "Cindy", "L.");
+        story.setLastInitial("L");
+        Story story2 = new Story("stories", "Cindy", "L");
         storyRepository.saveAndFlush(story);
+        storyRepository.saveAndFlush(story2);
         return new ArrayList<>();
+    }
+
+    public Story createNewStory(String storyText, String firstName,String lastInitial) {
+        Story newStory = new Story(storyText, firstName, lastInitial);
+        return storyRepository.save(newStory);
+    }
+
+    public List<Story> getAllStories() {
+        // Use the findAll method of the StoryRepository to fetch all stories from the database
+        return storyRepository.findAll();
     }
 }

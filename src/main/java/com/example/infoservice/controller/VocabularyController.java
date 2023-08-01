@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/library/vocabulary")
+//@RequestMapping("/library/vocabulary")
 public class VocabularyController {
 
     private final VocabularyService vocabularyService;
@@ -25,5 +25,5 @@ public class VocabularyController {
     }
 }
 
-//controllers should only be your access point
-//controllers also responsible for security
+// controllers should only be your access point
+// controllers also responsible for security

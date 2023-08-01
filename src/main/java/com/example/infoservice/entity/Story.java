@@ -20,17 +20,16 @@ public class Story {
 //    can this be whatever count we want?
     private String story;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, name="first_name", length = 100)
     private String firstName;
 
-    @Column(nullable = false, length = 1)
+    @Column(nullable = false, name="last_initial", length = 1)
     private String lastInitial;
 
     @Column(name = "created_date")
     private LocalDateTime createdDate;
 
     // Constructors
-    // No need to write explicit getters, setters, equals(), hashCode(), and toString() methods
 
     public Story() {
         // Default constructor
@@ -41,6 +40,31 @@ public class Story {
         this.firstName = firstName;
         this.lastInitial = lastInitial;
     }
+
+    public String getStory() { return story; }
+
+    public void setStory(String story) { this.story = story; }
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public String getLastInitial() {return lastInitial; }
+    public void setLastInitial(String lastInitial) { this.lastInitial = lastInitial; }
+
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDateTime createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    // @PrePersist callback method to set createdDate before insertion
+    @PrePersist
+    public void prePersist() {
+        createdDate = LocalDateTime.now();
+    }
+
+
 
 }
 
