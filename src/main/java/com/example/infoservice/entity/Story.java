@@ -50,6 +50,19 @@ public class Story {
     public String getLastInitial() {return lastInitial; }
     public void setLastInitial(String lastInitial) { this.lastInitial = lastInitial; }
 
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDateTime createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    // @PrePersist callback method to set createdDate before insertion
+    @PrePersist
+    public void prePersist() {
+        createdDate = LocalDateTime.now();
+    }
 
 
 
