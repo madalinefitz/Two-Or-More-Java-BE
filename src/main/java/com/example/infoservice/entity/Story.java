@@ -16,7 +16,7 @@ public class Story {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 250)
+    @Column(nullable = false, length = 500)
 //    can this be whatever count we want?
     private String story;
 
