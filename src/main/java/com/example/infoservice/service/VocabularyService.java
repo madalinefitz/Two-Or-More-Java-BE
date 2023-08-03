@@ -28,7 +28,14 @@ public class VocabularyService {
     }
 
 //    get the vocab table
+    public Vocabulary createNewVocabulary(String term, String definition) {
+        Vocabulary newVocabulary = new Vocabulary(term, definition);
+        return vocabularyRepository.save(newVocabulary);
+    }
 
-
+    public List<Vocabulary> getAllVocabulary() {
+        // Use the findAll method of the VocabularyRepository to fetch all vocabulary from the database
+        return vocabularyRepository.findAll();
+    }
 
 }
