@@ -42,7 +42,8 @@ public class Vocabulary {
 
     public void setTerm(String term) { this.term = term; }
 
-    public String getDefinition() {return definition; }
+    public String getDefinition() { return definition; }
+
     public void setDefinition(String definition) { this.definition = definition; }
 
     public LocalDateTime getCreatedDate() {

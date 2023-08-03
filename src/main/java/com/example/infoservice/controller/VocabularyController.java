@@ -19,6 +19,7 @@ public class VocabularyController {
         this.vocabularyService = service;
     }
 
+
     @GetMapping("/vocabulary")
     public ResponseEntity<List<Vocabulary>> getAllVocabulary() {
         // Call the StoryService to fetch all stories from the database
@@ -31,6 +32,14 @@ public class VocabularyController {
     @GetMapping("/vocabtest")
     public String getHelloVocab() {
         return "hello vocabulary";
+    }
+
+    @PostMapping("/vocabulary")
+    public ResponseEntity<Vocabulary> createVocabulary(@RequestBody Vocabulary vocabulary) {
+        // Call the createNewVocabulary method of the VocabularyService
+        Vocabulary newVocabulary = vocabularyService.createNewVocabulary(vocabulary.getTerm(), vocabulary.getDefinition());
+        // Return the newly created story in the response with a 201 Created status
+        return ResponseEntity.status(HttpStatus.CREATED).body(newVocabulary);
     }
 }
 
