@@ -20,12 +20,15 @@ public class StoryController {
     }
 
     @GetMapping("/stories")
-    public ResponseEntity<List<Story>> getAllStories() {
+    public ResponseEntity<List<Story>> getAllStories(@RequestParam(defaultValue = "3") int limit) {
         // Call the StoryService to fetch all stories from the database
         List<Story> allStories = storyService.getAllStories();
 
+        // Limit the number of results based on the 'limit' parameter
+        List<Story> limitedStories = allStories.subList(0, Math.min(limit, allStories.size()));
+
         // Return the list of stories in the response with a 200 OK status
-        return ResponseEntity.status(HttpStatus.OK).body(allStories);
+        return ResponseEntity.status(HttpStatus.OK).body(limitedStories);
     }
 
     @GetMapping("/test")
