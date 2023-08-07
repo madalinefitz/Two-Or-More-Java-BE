@@ -20,16 +20,16 @@ public class ReadingMaterial {
     @Column(nullable = false, name="description", length = 500)
     private String description;
 
-    @Column(nullable = false, name="author_name")
+    @Column(nullable = false, name="author_name", length = 100)
     private String authorName;
 
-    @Column(nullable = false, name="author_photo")
+    @Column(nullable = false, name="author_photo", length = 900)
     private String authorPhoto;
 
-    @Column(nullable = false, name="book_cover")
+    @Column(nullable = false, name="book_cover", length = 900)
     private String bookCover;
 
-    @Column(nullable = false, name="link")
+    @Column(nullable = false, name="link", length = 900)
     private String link;
 
     @Column(name = "created_date")
@@ -76,25 +76,16 @@ public class ReadingMaterial {
 
     public void setLink(String link) { this.link = link; }
 
-    public LocalDateTime getCreatedDate() {
-        return createdDate;
-    }
+    public LocalDateTime getCreatedDate() { return createdDate;}
 
-    public void setCreatedDate(LocalDateTime createdDate) {
-        this.createdDate = createdDate;
-    }
+    public void setCreatedDate(LocalDateTime createdDate) { this.createdDate = createdDate; }
 
-    public LocalDateTime getUpdateDate() {
-        return updateDate;
-    }
+    public LocalDateTime getUpdateDate() { return updateDate; }
 
-    public void setUpdateDate(LocalDateTime updateDate) {
-        this.updateDate = updateDate;
-    }
+    public void setUpdateDate(LocalDateTime updateDate) { this.updateDate = updateDate; }
 
     // @PrePersist callback method to set createdDate before insertion
     @PrePersist
-    public void prePersist() {
-        createdDate = LocalDateTime.now();
-    }
+    public void prePersist() { createdDate = LocalDateTime.now(); }
+
 }
