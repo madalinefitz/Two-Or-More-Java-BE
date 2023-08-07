@@ -30,7 +30,7 @@ public class ReadingMaterialService {
         return new ArrayList<>();
     }
 
-    public ReadingMaterial createNewReadingMaterial(String title, String description,String authorName, String authorPhoto, String bookCover, String link) {
+    public ReadingMaterial createNewReadingMaterial(String title, String description, String authorName, String authorPhoto, String bookCover, String link) {
         ReadingMaterial newReadingMaterial = new ReadingMaterial(title, description, authorName, authorPhoto, bookCover, link);
         return readingMaterialRepository.save(newReadingMaterial);
     }

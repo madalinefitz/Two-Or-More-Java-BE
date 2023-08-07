@@ -34,11 +34,11 @@ public class ReadingMaterialController {
         return "hello reading";
     }
 
-//    @PostMapping("/reading")
-//    public ResponseEntity<Reading> createReading(@RequestBody Reading reading) {
-//        // Call the createNewReading method of the ReadingService
-//        Reading newReading = ReadingService.createNewReadingMaterial(readingMaterial.getTerm(), readingMaterial.getDefinition());
-//        // Return the newly created reading material in the response with a 201 Created status
-//        return ResponseEntity.status(HttpStatus.CREATED).body(newReadingMaterial);
-//    }
+    @PostMapping("/reading")
+    public ResponseEntity<ReadingMaterial> createReadingMaterial(@RequestBody ReadingMaterial readingMaterial) {
+        // Call the createNewReading method of the ReadingService
+        ReadingMaterial newReadingMaterial = readingMaterialService.createNewReadingMaterial(readingMaterial.getTitle(), readingMaterial.getDescription(), readingMaterial.getAuthorName(), readingMaterial.getAuthorPhoto(), readingMaterial.getBookCover(), readingMaterial.getLink());
+        // Return the newly created reading material in the response with a 201 Created status
+        return ResponseEntity.status(HttpStatus.CREATED).body(newReadingMaterial);
+    }
 }
