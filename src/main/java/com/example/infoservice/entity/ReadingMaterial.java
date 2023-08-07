@@ -8,7 +8,7 @@ import lombok.Data;
 @Table(name = "reading_materials")
 @Data
 
-public class Reading {
+public class ReadingMaterial {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,8 +44,12 @@ public class Reading {
     }
 
     public ReadingMaterial(String title, String description, String authorName, String authorPhoto, String bookCover, String link) {
-        this.term = term;
-        this.definition = definition;
+        this.title = title;
+        this.description = description;
+        this.authorName = authorName;
+        this.authorPhoto = authorPhoto;
+        this.bookCover = bookCover;
+        this.link = link;
     }
 
     public String getTitle() { return title; }

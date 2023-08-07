@@ -1,7 +1,7 @@
 package com.example.infoservice.controller;
 
-import com.example.infoservice.entity.Reading;
-import com.example.infoservice.service.ReadingService;
+import com.example.infoservice.entity.ReadingMaterial;
+import com.example.infoservice.service.ReadingMaterialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,20 +10,20 @@ import org.springframework.http.HttpStatus;
 import java.util.List;
 
 @RestController
-public class ReadingController {
+public class ReadingMaterialController {
 
-    private final ReadingService readingService;
+    private final ReadingMaterialService readingMaterialService;
 
     @Autowired
-    public ReadingController(ReadingController service) {
-        this.readingService = service;
+    public ReadingMaterialController(ReadingMaterialService service) {
+        this.readingMaterialService = service;
     }
 
 
     @GetMapping("/reading")
     public ResponseEntity<List<ReadingMaterial>> getAllReadingMaterials() {
         // Call the StoryService to fetch all stories from the database
-        List<ReadingMaterial> allReadingMaterials = readingService.getAllReadingMaterials();
+        List<ReadingMaterial> allReadingMaterials = readingMaterialService.getAllReadingMaterials();
 
         // Return the list of stories in the response with a 200 OK status
         return ResponseEntity.status(HttpStatus.OK).body(allReadingMaterials);
