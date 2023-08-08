@@ -21,17 +21,23 @@ public class ReadingMaterialController {
 
 
     @GetMapping("/reading")
-    public ResponseEntity<List<ReadingMaterial>> getAllReadingMaterials() {
+    public ResponseEntity<List<ReadingMaterial>> getAllReadingMaterial() {
         // Call the StoryService to fetch all stories from the database
-        List<ReadingMaterial> allReadingMaterials = readingMaterialService.getAllReadingMaterials();
+        List<ReadingMaterial> allReadingMaterial = readingMaterialService.getAllReadingMaterial();
 
         // Return the list of stories in the response with a 200 OK status
-        return ResponseEntity.status(HttpStatus.OK).body(allReadingMaterials);
+        return ResponseEntity.status(HttpStatus.OK).body(allReadingMaterial);
     }
 
     @GetMapping("/readingtest")
     public String getHelloReadingMaterials() {
         return "hello reading";
+    }
+
+    //test to see that I can add to the database
+    @GetMapping("/testreading")
+    public List<String> getReadingMaterial() {
+        return readingMaterialService.GetReadingMaterial();
     }
 
     @PostMapping("/reading")

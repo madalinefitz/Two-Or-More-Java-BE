@@ -35,7 +35,7 @@ public class ReadingMaterialService {
         return readingMaterialRepository.save(newReadingMaterial);
     }
 
-    public List<ReadingMaterial> getAllReadingMaterials() {
+    public List<ReadingMaterial> getAllReadingMaterial() {
         return readingMaterialRepository.findAll();
     }
 }
