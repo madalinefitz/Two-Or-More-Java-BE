@@ -39,7 +39,7 @@ public class DigitalMaterial {
         // Default constructor
     }
 
-    public DigitalMaterial(String title, String description, String authorName, String authorPhoto, String bookCover, String link) {
+    public DigitalMaterial(String title, String description, String authorName, String authorPhoto, String link) {
         this.title = title;
         this.description = description;
         this.authorName = authorName;
