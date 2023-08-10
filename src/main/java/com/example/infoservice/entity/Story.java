@@ -17,7 +17,6 @@ public class Story {
     private Long id;
 
     @Column(nullable = false, length = 500)
-//    can this be whatever count we want?
     private String story;
 
     @Column(nullable = false, name="first_name", length = 100)
