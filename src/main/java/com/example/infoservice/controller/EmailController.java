@@ -37,6 +37,4 @@ public class EmailController {
         return ResponseEntity.status(HttpStatus.CREATED).body(newEmail);
     }
 
-
-
 }
